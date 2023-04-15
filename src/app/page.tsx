@@ -8,9 +8,9 @@ export default function Home() {
             <div className="flex flex-1">
                 <aside className="w-72 bg-black pl-6 pt-6">
                     <div className="flex items-center gap-1 pl-0.5">
-                        <div className="w-1 h-1 bg-white/10 hover:bg-white/25 transition-colors rounded-full"></div>
-                        <div className="w-1 h-1 bg-white/10 hover:bg-white/25 transition-colors rounded-full"></div>
-                        <div className="w-1 h-1 bg-white/10 hover:bg-white/25 transition-colors rounded-full"></div>
+                        <div className="w-1 h-1 bg-white rounded-full"></div>
+                        <div className="w-1 h-1 bg-white rounded-full"></div>
+                        <div className="w-1 h-1 bg-white rounded-full"></div>
                     </div>
 
                     <nav className="space-y-5 mt-7 text-sm font-semibold text-zinc-400">
