@@ -8,6 +8,7 @@ module.exports = {
             },
             maxHeight: {
                 fmin: "calc(100vh - 17.6rem)",
+                fmax: "calc(100vh - 4.6rem)",
             },
             boxShadow: {
                 xs: "0 8px 8px rgba(0, 0, 0, 0.3)",

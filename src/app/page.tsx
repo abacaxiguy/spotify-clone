@@ -82,7 +82,7 @@ export default function Home() {
                         </a>
                     </nav>
                 </aside>
-                <main className="flex-1 p-6">
+                <main className="flex-1 p-6 overflow-auto max-h-fmax">
                     <div className="flex items-center gap-4">
                         <button className="bg-black/50 p-1 rounded-full">
                             <ChevronLeft />
