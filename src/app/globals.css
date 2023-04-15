@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    transition: all 0.4s ease;
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 100%, 0.3);
+    transition: all 0.4s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: hsla(0, 0%, 100%, 0.7);
+}
