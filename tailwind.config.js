@@ -22,6 +22,9 @@ module.exports = {
             backgroundColor: {
                 "zinc-bg": "#121212",
             },
+            width: {
+                128: "32rem",
+            },
         },
     },
     plugins: [],

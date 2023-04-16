@@ -1,11 +1,39 @@
-import { Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, Play } from "lucide-react";
+"use client";
+
+import {
+    Home as HomeIcon,
+    Search,
+    Library,
+    ChevronLeft,
+    ChevronRight,
+    Play,
+    Heart,
+    Shuffle,
+    SkipBack,
+    SkipForward,
+    Repeat,
+    Pause,
+    Mic2,
+    ListMusic,
+    Laptop2,
+    Volume2,
+    Maximize2,
+    MonitorSpeaker,
+} from "lucide-react";
+
+import { useState } from "react";
 
 import Image from "next/image";
 
 export default function Home() {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [liked, setLiked] = useState(false);
+    const [shuffled, setShuffled] = useState(false);
+    const [repeated, setRepeated] = useState(false);
+
     return (
-        <div className="h-screen flex flex-col">
-            <div className="flex flex-1">
+        <div className="h-screen flex flex-col overflow-hidden">
+            <div className="flex overflow-hidden">
                 <aside className="w-72 bg-black pl-6 pt-6">
                     <div className="flex items-center gap-1 pl-0.5">
                         <div className="w-1 h-1 bg-white rounded-full"></div>
@@ -314,7 +342,54 @@ export default function Home() {
                     </div>
                 </main>
             </div>
-            <footer className="bg-zinc-900/95 border-t border-zinc-700 p-6">Now playing: Aries - RIDING</footer>
+            <footer className="bg-zinc-900/95 border-t border-zinc-800/95 p-4 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    <Image src="/back2me.jpeg" alt="back2me's cover" width={55} height={55} quality={100} />
+                    <div className="flex flex-col gap-0.5 font-medium scale-90">
+                        <a href="" className="hover:underline text-sm text-white">
+                            back2me *°:⋆ₓₒ
+                        </a>
+                        <a href="" className="hover:underline hover:text-white text-xs text-zinc-400">
+                            Yameii Online
+                        </a>
+                    </div>
+                    <Heart color={liked ? "#1ED760" : "#fff"} size={17} className="ml-3" onClick={() => setLiked(!liked)} fill={liked ? "#1ED760" : "none"} />
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                    <div className="flex items-center gap-6">
+                        <Shuffle className="hover:brightness-200" color={shuffled ? "#1ED760" : "#BABABA"} size={18} onClick={() => setShuffled(!shuffled)} />
+                        <SkipBack strokeWidth={4} className="hover:brightness-200" color="#BABABA" size={18} fill="#BABABA" />
+                        <button className="rounded-full p-1.5 bg-white text-black" onClick={() => setIsPlaying(!isPlaying)}>
+                            {isPlaying ? <Pause fill="#000" strokeWidth={1} /> : <Play fill="#000" className="pl-1" />}
+                        </button>
+                        <SkipForward strokeWidth={4} className="hover:brightness-200" color="#BABABA" size={18} fill="#BABABA" />
+                        <Repeat className="hover:brightness-200" color={repeated ? "#1ED760" : "#BABABA"} size={18} onClick={() => setRepeated(!repeated)} />
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-xs text-zinc-400">1:51</span>
+                        <div className="group h-1 rounded-full w-128 bg-zinc-600">
+                            <div className="bg-zinc-200 w-4/6 h-1 rounded-full group-hover:bg-green-500 flex items-center justify-center">
+                                <div className="h-3 w-3 rounded-full bg-white ml-auto hidden group-hover:flex"></div>
+                            </div>
+                        </div>
+                        <span className="text-xs text-zinc-400">2:52</span>
+                    </div>
+                </div>
+                <div className="flex items-center gap-4">
+                    <Mic2 size={18} color="#A7A7A7" />
+                    <ListMusic size={20} color="#A7A7A7" />
+                    <MonitorSpeaker size={18} color="#A7A7A7" />
+                    <div className="flex items-center gap-2">
+                        <Volume2 size={18} color="#A7A7A7" />
+                        <div className="group h-1 rounded-full w-24 bg-zinc-600">
+                            <div className="bg-zinc-200 w-full h-1 rounded-full group-hover:bg-green-500 flex items-center justify-center">
+                                <div className="h-3 w-3 rounded-full bg-white ml-auto hidden group-hover:flex"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <Maximize2 size={18} color="#A7A7A7" />
+                </div>
+            </footer>
         </div>
     );
 }
