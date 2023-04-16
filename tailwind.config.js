@@ -7,7 +7,7 @@ module.exports = {
                 98: ".98",
             },
             maxHeight: {
-                fmin: "calc(100vh - 17.05rem)",
+                fmin: "calc(100vh - 18.3rem)",
                 fmax: "calc(100vh - 4.6rem)",
             },
             boxShadow: {

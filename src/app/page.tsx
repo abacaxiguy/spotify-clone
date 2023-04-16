@@ -376,18 +376,18 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4">
-                    <Mic2 size={18} color="#A7A7A7" />
-                    <ListMusic size={20} color="#A7A7A7" />
-                    <MonitorSpeaker size={18} color="#A7A7A7" />
+                    <Mic2 className="hover:brightness-200" size={18} color="#A7A7A7" />
+                    <ListMusic className="hover:brightness-200" size={20} color="#A7A7A7" />
+                    <MonitorSpeaker className="hover:brightness-200" size={18} color="#A7A7A7" />
                     <div className="flex items-center gap-2">
-                        <Volume2 size={18} color="#A7A7A7" />
+                        <Volume2 className="hover:brightness-200" size={18} color="#A7A7A7" />
                         <div className="group h-1 rounded-full w-24 bg-zinc-600">
                             <div className="bg-zinc-200 w-full h-1 rounded-full group-hover:bg-green-500 flex items-center justify-center">
                                 <div className="h-3 w-3 rounded-full bg-white ml-auto hidden group-hover:flex"></div>
                             </div>
                         </div>
                     </div>
-                    <Maximize2 size={18} color="#A7A7A7" />
+                    <Maximize2 className="hover:brightness-200" size={18} color="#A7A7A7" />
                 </div>
             </footer>
         </div>
