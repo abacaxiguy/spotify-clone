@@ -4,7 +4,7 @@
         <img alt="Spotify Logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png" height="100" />
     </p>
 
-# 🎶 Spotify clone, using Next.js and Tailwind 🌊
+# 🎶 Spotify clone, using Next.js and Tailwind CSS 🌊
 
 </div>
 
@@ -19,6 +19,13 @@
 <p align="center">
   <img src="./img/preview.gif" width="91%"/>
 </p>
+
+---
+
+## 🌎 Online!
+
+This project is [online](https://spotify-clone-abacaxiguy.vercel.app) at this moment! So you can go and check it out without having to clone the repo! 🚀<br>
+Deploy made with [Vercel](https://vercel.com/) 🔼.
 
 ---
 
