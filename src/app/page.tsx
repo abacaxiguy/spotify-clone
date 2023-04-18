@@ -364,7 +364,7 @@ export default function Home() {
                     </div>
                     <Heart strokeWidth={2.5} color={liked ? "#1ED760" : "#A7A7A7"} size={17} className="hover:brightness-200 ml-3" onClick={() => setLiked(!liked)} fill={liked ? "#1ED760" : "none"} />
                 </div>
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col items-center gap-2 mx-6">
                     <div className="flex items-center gap-6">
                         <Shuffle className="hover:brightness-200" color={shuffled ? "#1ED760" : "#BABABA"} size={18} onClick={() => setShuffled(!shuffled)} />
                         <SkipBack strokeWidth={4} className="hover:brightness-200" color="#BABABA" size={18} fill="#BABABA" />
@@ -376,7 +376,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-xs text-zinc-400">1:51</span>
-                        <div className="group h-1 rounded-full w-128 bg-zinc-600">
+                        <div className="group h-1 rounded-full w-48 lg:w-72 xl:w-128 bg-zinc-600">
                             <div className="bg-zinc-200 w-4/6 h-1 rounded-full group-hover:bg-green-500 flex items-center justify-center">
                                 <div className="h-3 w-3 rounded-full bg-white ml-auto hidden group-hover:flex"></div>
                             </div>
