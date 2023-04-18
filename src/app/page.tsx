@@ -19,6 +19,10 @@ import {
     Volume2,
     Maximize2,
     MonitorSpeaker,
+    ArrowUp,
+    ArrowUpCircle,
+    ChevronUp,
+    ChevronUpIcon,
 } from "lucide-react";
 
 import { useState } from "react";
@@ -344,7 +348,12 @@ export default function Home() {
             </div>
             <footer className="bg-zinc-900/95 border-t border-zinc-800/95 p-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <Image src="/back2me.jpeg" alt="back2me's cover" width={55} height={55} quality={100} />
+                    <div className="group flex relative">
+                        <Image className="shadow-xs" src="/back2me.jpeg" alt="back2me's cover" width={55} height={55} quality={100} />
+                        <div className="absolute bg-zinc-950/90 rounded-full top-1 right-1 opacity-0 group-hover:opacity-100">
+                            <ChevronUpIcon strokeWidth={1} className="pb-0.5" />
+                        </div>
+                    </div>
                     <div className="flex flex-col gap-0.5 font-medium scale-90">
                         <a href="" className="hover:underline text-sm text-white">
                             back2me *°:⋆ₓₒ
@@ -353,7 +362,7 @@ export default function Home() {
                             Yameii Online
                         </a>
                     </div>
-                    <Heart color={liked ? "#1ED760" : "#fff"} size={17} className="ml-3" onClick={() => setLiked(!liked)} fill={liked ? "#1ED760" : "none"} />
+                    <Heart strokeWidth={2.5} color={liked ? "#1ED760" : "#A7A7A7"} size={17} className="hover:brightness-200 ml-3" onClick={() => setLiked(!liked)} fill={liked ? "#1ED760" : "none"} />
                 </div>
                 <div className="flex flex-col items-center gap-2">
                     <div className="flex items-center gap-6">
