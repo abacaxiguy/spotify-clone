@@ -23,6 +23,7 @@ import {
     ArrowUpCircle,
     ChevronUp,
     ChevronUpIcon,
+    Repeat1,
 } from "lucide-react";
 
 import { useState } from "react";
@@ -34,6 +35,16 @@ export default function Home() {
     const [liked, setLiked] = useState(false);
     const [shuffled, setShuffled] = useState(false);
     const [repeated, setRepeated] = useState(false);
+    const [repeatOne, setRepeatOne] = useState(false);
+
+    const setRepeat = () => {
+        if (!repeated) setRepeated(!repeated);
+        else if (repeated && !repeatOne) setRepeatOne(!repeatOne);
+        else if (repeatOne) {
+            setRepeated(!repeated);
+            setRepeatOne(!repeatOne);
+        }
+    };
 
     return (
         <div className="h-screen flex flex-col overflow-hidden">
@@ -362,17 +373,30 @@ export default function Home() {
                             Yameii Online
                         </a>
                     </div>
-                    <Heart strokeWidth={2.5} color={liked ? "#1ED760" : "#A7A7A7"} size={17} className="hover:brightness-200 ml-3" onClick={() => setLiked(!liked)} fill={liked ? "#1ED760" : "none"} />
+                    <Heart
+                        strokeWidth={2.5}
+                        color={liked ? "#22c55e" : "#A7A7A7"}
+                        size={17}
+                        className={`${!liked && "hover:brightness-200"} ml-3 active:grayscale`}
+                        onClick={() => setLiked(!liked)}
+                        fill={liked ? "#22c55e" : "none"}
+                    />
                 </div>
                 <div className="flex flex-col items-center gap-2 mx-6">
                     <div className="flex items-center gap-6">
-                        <Shuffle className="hover:brightness-200" color={shuffled ? "#1ED760" : "#BABABA"} size={18} onClick={() => setShuffled(!shuffled)} />
+                        <div className={`${!shuffled ? "hover:brightness-200" : "hover:brightness-110"} flex flex-col items-center gap-2 relative`} onClick={() => setShuffled(!shuffled)}>
+                            <Shuffle color={shuffled ? "#22c55e" : "#BABABA"} size={18} />
+                            <div className={`bg-green-500 absolute -bottom-2 opacity-0 ${shuffled && "opacity-100"} rounded-full w-1 h-1`} />
+                        </div>
                         <SkipBack strokeWidth={4} className="hover:brightness-200" color="#BABABA" size={18} fill="#BABABA" />
                         <button className="rounded-full p-1.5 bg-white text-black" onClick={() => setIsPlaying(!isPlaying)}>
-                            {isPlaying ? <Pause fill="#000" strokeWidth={1} /> : <Play fill="#000" className="pl-1" />}
+                            {isPlaying ? <Pause fill="#000" strokeWidth={0.5} size={21} /> : <Play fill="#000" className="pl-0.5" size={21} />}
                         </button>
                         <SkipForward strokeWidth={4} className="hover:brightness-200" color="#BABABA" size={18} fill="#BABABA" />
-                        <Repeat className="hover:brightness-200" color={repeated ? "#1ED760" : "#BABABA"} size={18} onClick={() => setRepeated(!repeated)} />
+                        <div className={`${!repeated ? "hover:brightness-200" : "hover:brightness-110"} flex flex-col items-center gap-2 relative`} onClick={setRepeat}>
+                            {repeatOne ? <Repeat1 color="#22c55e" size={18} /> : <Repeat color={repeated ? "#22c55e" : "#BABABA"} size={18} />}
+                            <div className={`bg-green-500 absolute -bottom-2 opacity-0 ${repeated && "opacity-100"} rounded-full w-1 h-1`} />
+                        </div>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-xs text-zinc-400">1:51</span>
