@@ -1,8 +1,11 @@
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { Play } from "lucide-react";
 
 import Image from "next/image";
 import { Footer } from "./partials/Footer";
 import { Sidebar } from "./partials/Sidebar";
+import { Playlist } from "@/components/Playlist";
+import { NavIcons } from "@/components/NavIcons";
+import { WelcomeTitle } from "@/components/WelcomeTitle";
 
 export default function Home() {
     return (
@@ -10,88 +13,16 @@ export default function Home() {
             <div className="flex overflow-hidden">
                 <Sidebar />
                 <main className="flex-1 p-6 overflow-auto max-h-fmax">
-                    <div className="flex items-center gap-4">
-                        <button className="bg-black/50 p-1 rounded-full">
-                            <ChevronLeft />
-                        </button>
-                        <button className="bg-black/50 p-1 rounded-full">
-                            <ChevronRight />
-                        </button>
-                    </div>
+                    <NavIcons />
+                    <WelcomeTitle />
 
-                    <h1 className="font-semibold text-3xl mt-10">Good evening</h1>
-
-                    <div className="text-sm grid grid-cols-2 gap-3 mt-4 xl:gap-4 xl:grid-cols-3 ">
-                        <a href="" className="group bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded flex items-center gap-4 overflow-hidden">
-                            <Image src="/playlists/liked.png" alt="Liked songs icon" width={46} height={46} className="md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20" quality={100} />
-                            <strong>Liked songs</strong>
-                            <button className="transition-opacity duration-300 ease-out opacity-0 group-hover:opacity-100 rounded-full p-2.5 bg-green-500 text-black ml-auto mr-4 shadow-xs">
-                                <Play fill="#000" className="pl-1" />
-                            </button>
-                        </a>
-                        <a href="" className="group bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded flex items-center gap-4 overflow-hidden">
-                            <Image
-                                src="/playlists/chronic.jpg"
-                                alt='Album cover for "chronic - twikipedia"'
-                                width={46}
-                                height={46}
-                                className="md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20"
-                                quality={100}
-                            />
-                            <strong>chronic</strong>
-                            <button className="transition-opacity opacity-0 duration-300 group-hover:opacity-100 rounded-full p-2.5 bg-green-500 text-black ml-auto mr-4 shadow-xs">
-                                <Play fill="#000" className="pl-1" />
-                            </button>
-                        </a>
-                        <a href="" className="group bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded flex items-center gap-4 overflow-hidden">
-                            <Image
-                                src="/playlists/mildred.jpg"
-                                alt='Album cover for "MILDRED - Grim Salvo"'
-                                width={46}
-                                height={46}
-                                className="md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20"
-                                quality={100}
-                            />
-                            <strong>MILDRED</strong>
-                            <button className="transition-opacity duration-300 ease-out opacity-0 group-hover:opacity-100 rounded-full p-2.5 bg-green-500 text-black ml-auto mr-4 shadow-xs">
-                                <Play fill="#000" className="pl-1" />
-                            </button>
-                        </a>
-                        <a href="" className="group bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded flex items-center gap-4 overflow-hidden">
-                            <Image
-                                src="/playlists/gabriel.jpeg"
-                                alt='Album cover for "GABRIEL - keshi"'
-                                width={46}
-                                height={46}
-                                className="md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20"
-                                quality={100}
-                            />
-                            <strong>GABRIEL</strong>
-                            <button className="transition-opacity duration-300 ease-out opacity-0 group-hover:opacity-100 rounded-full p-2.5 bg-green-500 text-black ml-auto mr-4 shadow-xs">
-                                <Play fill="#000" className="pl-1" />
-                            </button>
-                        </a>
-                        <a href="" className="group bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded flex items-center gap-4 overflow-hidden">
-                            <Image
-                                src="/playlists/hypochondriac.jpeg"
-                                alt='Album cover for "hypochondriac - brakence"'
-                                width={46}
-                                height={46}
-                                className="md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20"
-                                quality={100}
-                            />
-                            <strong>hypochondriac</strong>
-                            <button className="transition-opacity duration-300 ease-out opacity-0 group-hover:opacity-100 rounded-full p-2.5 bg-green-500 text-black ml-auto mr-4 shadow-xs">
-                                <Play fill="#000" className="pl-1" />
-                            </button>
-                        </a>
-                        <a href="" className="group bg-white/10 hover:bg-white/20 transition-colors duration-300 rounded flex items-center gap-4 overflow-hidden">
-                            <Image src="/playlists/noir.jpg" alt='Album cover for "noir - smino"' width={46} height={46} className="md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20" quality={100} />
-                            <strong>NOIR</strong>
-                            <button className="transition-opacity duration-300 ease-out opacity-0 group-hover:opacity-100 rounded-full p-2.5 bg-green-500 text-black ml-auto mr-4 shadow-xs">
-                                <Play fill="#000" className="pl-1" />
-                            </button>
-                        </a>
+                    <div className="text-sm grid grid-cols-2 gap-3 mt-5 xl:gap-4 xl:grid-cols-3 ">
+                        <Playlist playlistName="Liked songs" artist="icon" playlist="liked.png" />
+                        <Playlist playlistName="chronic" artist="twikipedia" playlist="chronic.jpg" />
+                        <Playlist playlistName="MILDRED" artist="Grim Salvo" playlist="mildred.jpg" />
+                        <Playlist playlistName="GABRIEL" artist="keshi" playlist="gabriel.jpeg" />
+                        <Playlist playlistName="hypochondriac" artist="brakence" playlist="hypochondriac.jpeg" />
+                        <Playlist playlistName="NOIR" artist="smino" playlist="noir.jpg" />
                     </div>
 
                     <div className="flex items-center mt-10 justify-between">
