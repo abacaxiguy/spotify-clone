@@ -7,14 +7,14 @@ interface SongCardProps {
     src: string;
     name: string;
     description: string;
+    responsiveSize?: string;
 }
 
-export function SongCard({ type, src, name, description }: SongCardProps) {
-    src = type === "mix" ? "/mixes/" + src : "/artists/" + src;
+export function SongCard({ type, src, name, description, responsiveSize }: SongCardProps) {
     const alt = type === "artist" ? name + "'s pic" : name;
 
     return (
-        <a href="" className="group bg-zinc-900/95 p-4 rounded-md hover:bg-white/10 transition-colors flex flex-col gap-2">
+        <a href="" className={`group bg-zinc-900/95 p-4 rounded-md hover:bg-white/10 transition-colors flex flex-col gap-2 ${responsiveSize && `hidden ${responsiveSize}:flex`}`}>
             <div className="relative">
                 <Image src={src} alt={alt} className={`shadow-xs w-full ${type === "artist" ? "rounded-full" : "rounded"}`} width={100} height={100} quality={100} />
                 <button className="absolute bottom-2 right-2 transition-all duration-300 ease opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 rounded-full p-2.5 bg-green-500 text-black ml-auto shadow-xs">
