@@ -15,7 +15,7 @@ export default function Home() {
                     <NavIcons />
                     <WelcomeTitle />
 
-                    <div className="text-sm grid grid-cols-2 gap-3 mt-5 xl:gap-4 xl:grid-cols-3 ">
+                    <div className="text-sm grid grid-cols-1 gap-3 mt-5 md:grid-cols-2 xl:gap-4 xl:grid-cols-3 ">
                         <Playlist playlistName="Liked songs" artist="icon" playlist="liked.png" />
                         <Playlist playlistName="chronic" artist="twikipedia" playlist="chronic.jpg" />
                         <Playlist playlistName="MILDRED" artist="Grim Salvo" playlist="mildred.jpg" />
@@ -52,7 +52,7 @@ export default function Home() {
                         <SongCard type="artist" src="/artists/aries.jpeg" name="Aries" description="Artist" responsiveSize="ml" />
                     </div>
 
-                    <SectionTitle title="Uniquely yours" showMore={false} />
+                    <SectionTitle title="Uniquely yours" itens={5} />
 
                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ml:grid-cols-6 gap-6 mt-4">
                         <SongCard type="mix" src="/uniquely_yours/on_repeat.jpg" name="On Repeat" description="Songs you love right now" />
