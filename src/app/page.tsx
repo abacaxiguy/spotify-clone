@@ -1,130 +1,14 @@
-"use client";
-
-import {
-    Home as HomeIcon,
-    Search,
-    Library,
-    ChevronLeft,
-    ChevronRight,
-    Play,
-    Heart,
-    Shuffle,
-    SkipBack,
-    SkipForward,
-    Repeat,
-    Pause,
-    Mic2,
-    ListMusic,
-    Laptop2,
-    Volume2,
-    Maximize2,
-    MonitorSpeaker,
-    ArrowUp,
-    ArrowUpCircle,
-    ChevronUp,
-    ChevronUpIcon,
-    Repeat1,
-} from "lucide-react";
-
-import { useState } from "react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 import Image from "next/image";
+import { Footer } from "./partials/Footer";
+import { Sidebar } from "./partials/Sidebar";
 
 export default function Home() {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [liked, setLiked] = useState(false);
-    const [shuffled, setShuffled] = useState(false);
-    const [repeated, setRepeated] = useState(false);
-    const [repeatOne, setRepeatOne] = useState(false);
-
-    const setRepeat = () => {
-        if (!repeated) setRepeated(!repeated);
-        else if (repeated && !repeatOne) setRepeatOne(!repeatOne);
-        else if (repeatOne) {
-            setRepeated(!repeated);
-            setRepeatOne(!repeatOne);
-        }
-    };
-
     return (
         <div className="h-screen flex flex-col overflow-hidden">
             <div className="flex overflow-hidden">
-                <aside className="w-72 bg-black pl-6 pt-6">
-                    <div className="flex items-center gap-1 pl-0.5">
-                        <div className="w-1 h-1 bg-white rounded-full"></div>
-                        <div className="w-1 h-1 bg-white rounded-full"></div>
-                        <div className="w-1 h-1 bg-white rounded-full"></div>
-                    </div>
-
-                    <nav className="space-y-4 mt-7 text-xs font-semibold text-zinc-400">
-                        <a href="" className="flex items-center gap-3  hover:text-zinc-50 transition-colors ease-linear duration-200 active:scale-98">
-                            <HomeIcon />
-                            Home
-                        </a>
-                        <a href="" className="flex items-center gap-3 hover:text-zinc-50 transition-colors ease-linear duration-200 active:scale-98">
-                            <Search />
-                            Search
-                        </a>
-                        <a href="" className="flex items-center gap-3 hover:text-zinc-50 transition-colors ease-linear duration-200 active:scale-98">
-                            <Library />
-                            Your Library
-                        </a>
-                    </nav>
-
-                    <nav className="border-t border-zinc-800 mt-10 pt-4 text-xs font-medium text-zinc-400 flex flex-col gap-4 overflow-auto max-h-fmin pb-3">
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            𝓼𝓶𝓲𝓷𝓸 𝓼𝓱𝓲𝓽 🚬🍀
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            𝕙 𝕪 𝕡 𝕖 𝕣 𝕡 𝕠 𝕡 🎤
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            is that a BRAZIL REFERENCE? 🟢🟡🔵
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            new &quot;JUST THE BANGERS&quot; 💣
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            its missing something... KPOP 🏳‍🌈
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            THE BROCK AND THE HAMPTON 👥
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            light hyperpop 🎤
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            khår¥ ï§ ÐêåÐ 💀
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            𝚃 𝚁 𝙰 $ 𝙷 🚯
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            𝓊𝒷𝑒𝓇 𝓉𝑜 𝓉𝒽𝑒 𝒸𝓇𝒾𝒷 🚘
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            p s y d u c k 🌊🧠
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            소액 화폐 ？ 💸
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            ßåÐ †råþ 💎
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            もう話さないけど 🆒
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            ₜₕₑ 𝓰ₐₙ𝓰 🤝
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            𝖙𝖍𝖎𝖘 𝖎𝖘 𝖐𝖎𝖓𝖌 𝖆𝖒𝖎 👑
-                        </a>
-                        <a href="" className="hover:text-zinc-50 cursor-default">
-                            i̷t̷s̷ ̷a̷r̷i̷e̷s̷ ̷t̷i̷m̷e̷ 🥶
-                        </a>
-                    </nav>
-                </aside>
+                <Sidebar />
                 <main className="flex-1 p-6 overflow-auto max-h-fmax">
                     <div className="flex items-center gap-4">
                         <button className="bg-black/50 p-1 rounded-full">
@@ -357,72 +241,7 @@ export default function Home() {
                     </div>
                 </main>
             </div>
-            <footer className="bg-zinc-900/95 border-t border-zinc-800/95 p-4 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                    <div className="group flex relative">
-                        <Image className="shadow-xs" src="/back2me.jpeg" alt="back2me's cover" width={55} height={55} quality={100} />
-                        <div className="absolute bg-zinc-950/90 rounded-full top-1 right-1 opacity-0 group-hover:opacity-100">
-                            <ChevronUpIcon strokeWidth={1} className="pb-0.5" />
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-0.5 font-medium scale-90">
-                        <a href="" className="hover:underline text-sm text-white">
-                            back2me *°:⋆ₓₒ
-                        </a>
-                        <a href="" className="hover:underline hover:text-white text-xs text-zinc-400">
-                            Yameii Online
-                        </a>
-                    </div>
-                    <Heart
-                        strokeWidth={2.5}
-                        color={liked ? "#22c55e" : "#A7A7A7"}
-                        size={17}
-                        className={`${!liked && "hover:brightness-200"} ml-3 active:grayscale`}
-                        onClick={() => setLiked(!liked)}
-                        fill={liked ? "#22c55e" : "none"}
-                    />
-                </div>
-                <div className="flex flex-col items-center gap-2 mx-6">
-                    <div className="flex items-center gap-6">
-                        <div className={`${!shuffled ? "hover:brightness-200" : "hover:brightness-110"} flex flex-col items-center gap-2 relative`} onClick={() => setShuffled(!shuffled)}>
-                            <Shuffle color={shuffled ? "#22c55e" : "#BABABA"} size={18} />
-                            <div className={`bg-green-500 absolute -bottom-2 opacity-0 ${shuffled && "opacity-100"} rounded-full w-1 h-1`} />
-                        </div>
-                        <SkipBack strokeWidth={4} className="hover:brightness-200" color="#BABABA" size={18} fill="#BABABA" />
-                        <button className="rounded-full p-1.5 bg-white text-black" onClick={() => setIsPlaying(!isPlaying)}>
-                            {isPlaying ? <Pause fill="#000" strokeWidth={0.5} size={21} /> : <Play fill="#000" className="pl-0.5" size={21} />}
-                        </button>
-                        <SkipForward strokeWidth={4} className="hover:brightness-200" color="#BABABA" size={18} fill="#BABABA" />
-                        <div className={`${!repeated ? "hover:brightness-200" : "hover:brightness-110"} flex flex-col items-center gap-2 relative`} onClick={setRepeat}>
-                            {repeatOne ? <Repeat1 color="#22c55e" size={18} /> : <Repeat color={repeated ? "#22c55e" : "#BABABA"} size={18} />}
-                            <div className={`bg-green-500 absolute -bottom-2 opacity-0 ${repeated && "opacity-100"} rounded-full w-1 h-1`} />
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span className="text-xs text-zinc-400">1:51</span>
-                        <div className="group h-1 rounded-full w-48 lg:w-72 xl:w-128 bg-zinc-600">
-                            <div className="bg-zinc-200 w-4/6 h-1 rounded-full group-hover:bg-green-500 flex items-center justify-center">
-                                <div className="h-3 w-3 rounded-full bg-white ml-auto hidden group-hover:flex"></div>
-                            </div>
-                        </div>
-                        <span className="text-xs text-zinc-400">2:52</span>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4">
-                    <Mic2 className="hover:brightness-200" size={18} color="#A7A7A7" />
-                    <ListMusic className="hover:brightness-200" size={20} color="#A7A7A7" />
-                    <MonitorSpeaker className="hover:brightness-200" size={18} color="#A7A7A7" />
-                    <div className="flex items-center gap-2">
-                        <Volume2 className="hover:brightness-200" size={18} color="#A7A7A7" />
-                        <div className="group h-1 rounded-full w-24 bg-zinc-600">
-                            <div className="bg-zinc-200 w-full h-1 rounded-full group-hover:bg-green-500 flex items-center justify-center">
-                                <div className="h-3 w-3 rounded-full bg-white ml-auto hidden group-hover:flex"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <Maximize2 className="hover:brightness-200" size={18} color="#A7A7A7" />
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }
