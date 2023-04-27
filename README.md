@@ -39,7 +39,7 @@ Currently this project it's only frontend, so it's not possible to actually play
 
 This project was developed using the following technologies:
 
-<a href="https://nextjs.org/" target="_blank"><img height="24px" src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black" /></a>
+<a href="https://nextjs.org/" target="_blank"><img height="24px" src="https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white" /></a>
 <a href="https://www.typescriptlang.org/" target="_blank"><img height="24px" src="https://img.shields.io/badge/-Typescript-3178C6?style=flat-square&logo=typescript&logoColor=white" /></a>
 <a href="https://tailwindcss.com/" target="_blank"><img height="24px" src="https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" /></a>
 
