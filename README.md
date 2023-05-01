@@ -29,9 +29,13 @@ Deploy made with [Vercel](https://vercel.com/) 🔼.
 
 ---
 
-## ⚠ Disclaimer
+## ⚠ Disclaimer (updated)
 
 Currently this project it's only frontend, so it's not possible to actually play any song or playlist. It's just a clone of the Spotify's UI. (for now...)
+
+**UPDATE:**
+
+Spotify's UI just changed it's design in desktop apps, so if this project turn into a full clone, it will be the old UI. I'm still thinking about it, but I think it's better to keep it as it is, since it was a good practice on Next.js and Tailwind CSS and updating it to the new UI would just be the same thing, but with a different design.
 
 ---
 
