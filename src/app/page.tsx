@@ -1,5 +1,5 @@
-import { Footer } from "./partials/Footer";
-import { Sidebar } from "./partials/Sidebar";
+import { Footer } from "../partials/Footer";
+import { Sidebar } from "../partials/Sidebar";
 import { Playlist } from "@/components/Playlist";
 import { NavIcons } from "@/components/NavIcons";
 import { WelcomeTitle } from "@/components/WelcomeTitle";
